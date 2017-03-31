@@ -39,6 +39,9 @@ function fetchAndDisplayGif(event) {
             console.log("we received a response!");
             console.log(response);
 
+            var loading = $('#loading')
+                .attr('hidden', true);
+
             var image = $('img')
                 .attr('src', response.data.image_url)
                 .attr('hidden', false);
@@ -51,10 +54,8 @@ function fetchAndDisplayGif(event) {
             setGifLoadedStatus(false);
         }
     });
-    
-    // TODO
-    // give the user a "Loading..." message while they wait
-    
+    var loading = $('#loading')
+        .attr('hidden', false)
 }
 
 
